@@ -105,7 +105,6 @@ footer {
     border-radius: 16px;
     display: grid;
     grid-template-columns: 64px 224px;
-    grid-template-rows: auto auto;
 }
 .buttonIMG > img {
     margin: 16px;
@@ -146,10 +145,17 @@ footer {
 
 /* Mobile */
 @media only screen and (max-width: 768px) {
+    header {
+        text-align: center;
+    }
     .area {
         padding: 0 16px;
     }
     .imgContatoMobile {
         display: block;
+    }
+    .buttonArea {
+        float: none;
+        margin: 16px auto;
     }
 }
