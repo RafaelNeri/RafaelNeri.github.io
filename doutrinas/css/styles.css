@@ -1,0 +1,58 @@
+body {
+    background-color: #222428
+}
+
+header {
+    background-color: #EDCE5B;
+}
+
+header .buscaTopo {
+    border-color: #000;
+    background-color: #edce5b;
+}
+
+ul.sidebarDoutrinas .btn-toggle {
+    color: #EDCE5B;
+}
+ul.sidebarDoutrinas .btn-toggle:hover,
+ul.sidebarDoutrinas .btn-toggle:focus {
+    background-color: #edce5b;
+    color: #000;
+}
+
+ul.sidebarDoutrinas .btn-toggle-nav a {
+    color: #FFF;
+}
+ul.sidebarDoutrinas .btn-toggle-nav a:hover,
+ul.sidebarDoutrinas .btn-toggle-nav a:focus {
+    color: #000;
+    background-color: #ffffff;
+}
+
+.bgTopo {
+    width: 100%;
+    height: 20vh;
+    background-image: url(../images/bg-topo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1,
+h2,
+h5 {
+    color: #EDCE5B;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: #FFF;
+    --bs-tooltip-color: #000;
+}
+
+.iconLink {
+    cursor: pointer;
+    opacity: .5;
+}
+.iconLink:hover {
+    opacity: 1;
+}
