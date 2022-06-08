@@ -7,6 +7,9 @@
     
     <title>HASD - Doutrinas</title>
     
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -14,7 +17,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/headers.css" rel="stylesheet">
     <link href="css/sidebars.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">    
     
 </head>
 <body>
@@ -29,74 +32,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-md-block d-lg-none">
-                            <li class="dropdown nav-item text-center mt-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Categoria 1
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 3
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown nav-item text-center mt-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Categoria 2
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 3
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown nav-item text-center mt-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Categoria 3
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            Subctegoria 3
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-md-block d-lg-none" id="menuMobileDoutrinas"></ul>
                     </div>
                     
                 </div>
@@ -108,132 +44,11 @@
         <div class="row">
             <div class="col-3 d-none d-lg-block">
                 <div class="flex-shrink-0 py-3 sticky-top">
-                    <ul class="list-unstyled ps-0 sidebarDoutrinas">
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                                Categoria 1
-                            </button>
-                            <div class="collapse show" id="home-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 1
-                                    </a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 2
-                                    </a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 3
-                                    </a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 4
-                                    </a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 5
-                                    </a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 6
-                                    </a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">
-                                        Subcategoria 7
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                                Categoria 2
-                            </button>
-                            <div class="collapse" id="dashboard-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Overview</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Weekly</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Monthly</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Annually</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                                Categoria 3
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                                Categoria 4
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                                Categoria 5
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                                Categoria 6
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                                Categoria 7
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                                Categoria 8
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">New</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Processed</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                                    <li><a href="#" class="d-inline-flex text-decoration-none rounded">Returned</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                    <ul class="list-unstyled ps-0 sidebarDoutrinas" id="sidebarDoutrinas"></ul>
                 </div>
             </div>
             <div class="col-12 col-lg-9">
+                
                 <div class="bgTopo mb-5"></div>
                 
                 <h1 class="text-center">
@@ -252,76 +67,8 @@
                     Este é o Novo Hinário Adventista
                 </p>
                 
-                <h2>
-                    A Doutrina de Deus <img src="images/ico-link-hover.svg" class="iconLink" alt="A Doutrina de Deus" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-custom-class="custom-tooltip" title="Copiar link">
-                </h2>
+                <div id="doutrinasDetalhes"></div>
                 
-                <p class="lead text-white mb-5">
-                    Deus é amor. Ele é o início de tudo. Suas digitais estão estampadas na criação; Seu Ser, materializado na encarnação; Sua mensagem, revelada nas Escrituras. É o único Deus, unidade de três Pessoas coeternas: Pai, Filho e Espírito Santo. Onipotente, onipresente e onisciente, Ele merece todo nosso louvor. Hinos do presente e do passado se tornaram marcantes por exaltar com profundidade e beleza Aquele que é digno de receber honra, glória e domínio. Nesta seção, você é convidado a adorar a Deus pelo que Ele é e pelo que fez, faz e fará. Louve o Senhor!
-                </p>
-                
-                <h3 class="text-white">
-                    A Trindade <img src="images/ico-link-hover.svg" class="iconLink" alt="A Doutrina de Deus" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-custom-class="custom-tooltip" title="Copiar link">
-                </h3>
-                
-                <p class="lead text-white">
-                    Crença Fundamental (Hinos de 1 a 14)
-                </p>
-                
-                <p class="text-white mb-5">
-                    Há um só Deus: Pai, Filho e Espírito Santo. Uma unidade de três Pessoas coeternas. Deus é imortal, onipotente, onisciente, acima de tudo, e sempre presente. (Deuteronômio 6:4; 29:29; Mateus 28:19; 2 Coríntios 13:13; Efésios 4:4-6; 1 Pedro 1:2; 1 Timóteo 1:17; Apocalipse 14:6 e 7).
-                </p>
-                
-                <table class="table table-dark table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-center" style="width: 15%;">
-                                Número
-                            </th>
-                            <th scope="col">
-                                Hino
-                            </th>
-                            <th scope="col" class="text-center" style="width: 15%;">
-                                Vídeo
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="text-center">
-                                1
-                            </th>
-                            <td>
-                                Santo, Santo, Santo!
-                            </td>
-                            <td class="text-center">
-                                <img src="images/ico-youtube-white.svg" alt="Youtube">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-center">
-                                2
-                            </th>
-                            <td>
-                                Ó Adorai o Senhor
-                            </td>
-                            <td class="text-center">
-                                <img src="images/ico-youtube-white.svg" alt="Youtube">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="text-center">
-                                3
-                            </th>
-                            <td>
-                                O Eterno Deus Reina
-                            </td>
-                            <td class="text-center">
-                                <img src="images/ico-youtube-white.svg" alt="Youtube">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -452,5 +199,7 @@
     
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/sidebars.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 </html>
