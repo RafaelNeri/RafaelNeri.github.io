@@ -7,6 +7,10 @@
     
     <title>HASD - Doutrinas</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/headers.css" rel="stylesheet">
     <link href="css/sidebars.css" rel="stylesheet">
@@ -15,26 +19,94 @@
 </head>
 <body>
     
-    <header class="p-2">
+    <header>
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img src="images/logo-novo-hasd.png" alt="">
-                </a>
-                
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                </ul>
-                
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-                    <input type="search" class="buscaTopo form-control form-control-dark" placeholder="Buscar..." aria-label="Buscar">
-                </form>
-            </div>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <img src="images/logo-novo-hasd.png" alt="HASD - Doutrinas" class="navbar-brand">
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-md-block d-lg-none">
+                            <li class="dropdown nav-item text-center mt-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categoria 1
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown nav-item text-center mt-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categoria 2
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown nav-item text-center mt-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categoria 3
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 2
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            Subctegoria 3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </nav>
         </div>
     </header>
     
     <div class="container pb-5">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 d-none d-lg-block">
                 <div class="flex-shrink-0 py-3 sticky-top">
                     <ul class="list-unstyled ps-0 sidebarDoutrinas">
                         <li class="mb-1">
@@ -161,27 +233,24 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-12 col-lg-9">
                 <div class="bgTopo mb-5"></div>
                 
                 <h1 class="text-center">
-                    Título
+                    Para os cansados da vida neste mundo,
+                    <br>
+                    <b>novo bálsamo</b>
                 </h1>
                 
-                <p class="lead text-center text-white mb-3 text-opacity-50">
-                    Subtítulo
+                <p class="lead text-center text-white mt-3 mb-5 text-opacity-50">
+                    Para os sonhadores, uma terra linda e encantada
+                    <br>
+                    Para os braços calejados, paz
+                    <br><br>
+                    Melodias de beleza incapaz de ser comparada
+                    <br>
+                    Este é o Novo Hinário Adventista
                 </p>
-                
-                <div class="row mb-5">
-                    <div class="col-12 text-center">
-                        <button type="button" class="btn btn-outline-warning mx-1 px-5">
-                            Botão 1
-                        </button>
-                        <button type="button" class="btn btn-outline-warning mx-1 px-5">
-                            Botão 2
-                        </button>
-                    </div>
-                </div>
                 
                 <h2>
                     A Doutrina de Deus <img src="images/ico-link-hover.svg" class="iconLink" alt="A Doutrina de Deus" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-custom-class="custom-tooltip" title="Copiar link">
@@ -260,71 +329,71 @@
     <div class="container">
         <footer class="bg-dark pt-5 text-white border-top">
             <div class="row">
-                <div class="col-6 col-md-2 mb-3">
+                <div class="col-12 col-xs-6 col-md-4 col-lg-2 mb-3 xsCenter">
                     <h5>
                         Novo Hinário
                     </h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a href="https://novohinario.cpb.com.br/" class="link-light nav-link p-0">
+                            <a href="https://novohinario.cpb.com.br/" target="_blank" class="link-light nav-link p-0">
                                 Site de divulgação
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="https://lojahinario.cpb.com.br/" class="link-light nav-link p-0">
+                            <a href="https://lojahinario.cpb.com.br/" target="_blank" class="link-light nav-link p-0">
                                 Loja online
                             </a>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="col-6 col-md-2 mb-3">
+                <div class="col-12 col-xs-6 col-md-4 col-lg-2 mb-3 xsCenter">
                     <h5>
                         Sobre nós
                     </h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a href="https://www.cpb.com.br/" class="link-light nav-link p-0">
+                            <a href="https://www.cpb.com.br/" target="_blank" class="link-light nav-link p-0">
                                 Loja online
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="https://mais.cpb.com.br/" class="link-light nav-link p-0">
+                            <a href="https://mais.cpb.com.br/" target="_blank" class="link-light nav-link p-0">
                                 Mais CPB
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="https://www.revistaadventista.com.br/" class="link-light nav-link p-0">
+                            <a href="https://www.revistaadventista.com.br/" target="_blank" class="link-light nav-link p-0">
                                 Notícias
                             </a>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="col-6 col-md-2 mb-3">
+                <div class="col-12 col-xs-6 col-md-4 col-lg-2 mb-3 xsCenter">
                     <h5>
                         Fale conosco
                     </h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2">
-                            <a href="tel:0800552616" class="link-light nav-link p-0">
+                            <a href="tel:0800552616" target="_blank" class="link-light nav-link p-0">
                                 Televendas
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="https://wa.me/5515981005073" class="link-light nav-link p-0">
+                            <a href="https://wa.me/5515981005073" target="_blank" class="link-light nav-link p-0">
                                 WhatsApp
                             </a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a href="http://livrarias.cpb.com.br/" class="link-light nav-link p-0">
+                            <a href="http://livrarias.cpb.com.br/" target="_blank" class="link-light nav-link p-0">
                                 Livrarias
                             </a>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="col-md-5 offset-md-1 mb-3">
+                <div class="col-12 col-xs-12 col-md-12 col-lg-6 mb-3">
                     <form>
                         <h5>
                             Se inscreva
@@ -345,32 +414,38 @@
                 </div>
             </div>
             
-            <div class="border-top d-flex flex-column flex-sm-row justify-content-between my-4 pb-2 pt-4">
-                <p>
-                    Casa Publicadora Brasileira &copy; Todos os direitos reservados
-                </p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3">
-                        <a class="" href="https://www.instagram.com/cpbeditora/" target="_blank">
-                            <img src="images/ico-instagram.svg" alt="Instagram">
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="" href="https://www.youtube.com/user/casapublicadora" target="_blank">
-                            <img src="images/ico-youtube.svg" alt="Youtube">
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="" href="https://www.facebook.com/cpbeditora/" target="_blank">
-                            <img src="images/ico-facebook.svg" alt="Facebook">
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="" href="https://twitter.com/cpbeditora/" target="_blank">
-                            <img src="images/ico-twitter.svg" alt="Twitter">
-                        </a>
-                    </li>
-                </ul>
+            <div class="border-top my-4 pb-2 pt-4">
+                <div class="row">
+                    <div class="col-xs-12 col-md-9 xsCenter">
+                        <p>
+                            Casa Publicadora Brasileira &copy; Todos os direitos reservados
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-md-3 xsCenter">
+                        <ul class="list-unstyled d-flex float-end iconesRodape">
+                            <li class="ms-3">
+                                <a class="" href="https://www.instagram.com/cpbeditora/" target="_blank">
+                                    <img src="images/ico-instagram.svg" alt="Instagram">
+                                </a>
+                            </li>
+                            <li class="ms-3">
+                                <a class="" href="https://www.youtube.com/user/casapublicadora" target="_blank">
+                                    <img src="images/ico-youtube.svg" alt="Youtube">
+                                </a>
+                            </li>
+                            <li class="ms-3">
+                                <a class="" href="https://www.facebook.com/cpbeditora/" target="_blank">
+                                    <img src="images/ico-facebook.svg" alt="Facebook">
+                                </a>
+                            </li>
+                            <li class="ms-3">
+                                <a class="" href="https://twitter.com/cpbeditora/" target="_blank">
+                                    <img src="images/ico-twitter.svg" alt="Twitter">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
