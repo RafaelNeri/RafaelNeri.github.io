@@ -3,6 +3,24 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.linkTopo {
+    width: 40px;
+    height: 40px;
+    background-color: #EDCE5B;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+}
+.linkTopo img {
+    width: 22px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
 header {
     background-color: #EDCE5B;
 }
@@ -35,6 +53,7 @@ header ul.navbar-nav .dropdown-menu .dropdown-ite:active {
 
 ul.sidebarDoutrinas .btn-toggle {
     color: #EDCE5B;
+    text-align: left;
 }
 ul.sidebarDoutrinas .btn-toggle:hover,
 ul.sidebarDoutrinas .btn-toggle:focus {
@@ -116,5 +135,8 @@ h5 {
         float: none !important;
         margin: 0 auto;
         display: inline-flex !important;
+    }
+    header ul.navbar-nav .dropdown-menu .dropdown-item {
+        white-space: initial;
     }
 }
