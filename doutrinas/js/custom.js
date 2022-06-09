@@ -1,7 +1,7 @@
 $( document ).ready(function()
 {
-    // $.getJSON('https://rafaelneri.github.io/doutrinas/json/doctrines.json', function(data)
-    $.getJSON('https://novohinario.cpb.com.br/doutrinas/json/doctrines.json', function(data)
+    $.getJSON('https://rafaelneri.github.io/doutrinas/json/doctrines.json', function(data)
+    // $.getJSON('https://novohinario.cpb.com.br/doutrinas/json/doctrines.json', function(data)
 
     {        
         data.doctrines.forEach(function(doctrine, i_doctrine){
