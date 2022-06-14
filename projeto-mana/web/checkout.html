@@ -1,0 +1,433 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Maná - Checkout</title>
+    <meta name="description" content="Projeto Maná">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/favicon.ico" type="image/x-icon" rel="preload icon" />
+    <link rel="preload stylesheet" href="css/bootstrap.min.css">
+    <link href="/css/style-checkout.css?201906151045" rel="preload stylesheet">
+    <link href="/css/style-geral.css?201906151045" rel="stylesheet">
+    <link href="/css/style.css?201906151045" rel="stylesheet">
+    <link href="./css/style-checkout.css" rel="preload stylesheet">
+    <link href="./css/style-geral.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="preload stylesheet">
+    <link rel="preload import" href="./bower_components/cpb-bar/cpb-bar.html">
+</head>
+
+<body>
+
+    <!-- <cpb-bar hide-search hide-account></cpb-bar> -->
+
+    <div class="load">
+        <div class="card-load">
+            <span class="text-load">Estamos processando o pagamento, aguarde.</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="container-fluid menuFixoCheckout">
+        <nav class="container">
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-10 voltarBtn">
+                    <a href="javascript:history.back()">
+                        <i class="fa fa-angle-left"></i> Voltar à página Inicial</a>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 carrinhoCompra">
+                    <a href="#itensselecionados" class="carrinhoComItens">
+                        <p>
+                            <i class="fa fa-shopping-cart"></i>
+                            <span id="numeroCarrinho" class="numeroCarrinho"></span>
+                            <span id="palavraItens" class="palavraItens"></span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Cart Header -->
+    <section class="container-fluid tituloPagina">
+        <h1>Carrinho</h1>
+        <div id="subTitulo">Finalize seu pedido de forma rápida</div>
+    </section>
+    <!-- Form -->
+    <form id="checkoutForm" class="container formCheckout" autocomplete="off">
+        <div class="cadastroForm">
+            <!-- Mensagem de erro -->
+            <div id="checkoutFormErrors" class="alert alert-warning" role="alert" style="display: none">
+                <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
+                <strong>Verifique os seguintes campos inválidos</strong>
+                <ul id="checkoutFormErrorsList"></ul>
+            </div>
+            <!-- User Information -->
+            <h3>Informações Pessoais</h3>
+            <div class="row" id="commentForm1">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <label for="login">Nome completo</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-name name="client[name]" tabindex="1" type="text" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <label for="cpf">CPF</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input placeholder="Ex.: 000.000.000-00" data-client-cpf name="client[cpf]" class="cpf"
+                            tabindex="2" type="tel" minlength="14" maxlength="14" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <label for="login">E-mail</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-email name="client[email]" tabindex="3" type="email" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <label for="login">Fone 1</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input placeholder="Ex.: (00) 00000-0000" data-client-phone name="client[phone]"
+                            class="phone_with_ddd" tabindex="4" type="tel" required />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <label for="login">Fone 2 (opcional)</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input placeholder="Ex.: (00) 00000-0000" data-client-phone2 name="client[phone2]"
+                            class="phone_with_ddd" tabindex="5" type="tel" />
+                    </div>
+                </div>
+            </div>
+            <!-- Delivery -->
+            <h3 class="marginTitulo">Endereço de Entrega</h3>
+            <div class="row" id="commentForm2">
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="cep">CEP *</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input placeholder="Ex.: 00000-000" data-client-address-CEP name="client[address][CEP]"
+                        class="cep" tabindex="6" type="tel" minlength="6"  />
+                    </div>
+                </div>
+                
+
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Endereço</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input id="rua" data-client-address-street name="client[address][street]" tabindex="7" type="text"
+                            minlength="2" required />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Número</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-address-number name="client[address][number]" tabindex="8" type="tel"
+                            minlength="1" required />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Bairro</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input id="bairro" data-client-address-neighborhood name="client[address][neighborhood]" tabindex="9"
+                            type="text" minlength="2" required />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Cidade</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input id="cidade" data-client-address-city name="client[address][city]" tabindex="10" type="text"
+                            minlength="2" required />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">UF</label>
+                    <div class="lineInput lineInput--dark lineInput--select">
+                        <select id="uf" data-client-address-federativeUnit name="client[address][federativeUnit]" tabindex="11"
+                            required>
+                            <option value="selecione" disabled selected>Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Complemento (opcional)</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-address-complement name="client[address][complement]" tabindex="12"
+                            type="text" maxlength="50">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Caixa Postal (opcional)</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-address-mailbox name="client[address][mailbox]" tabindex="13" type="number"
+                            min="1" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Igreja</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-address-church name="client[address][church]" tabindex="14" type="text" minlength="2">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Distrito</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-address-distrito name="client[address][distrito]" tabindex="14" type="text" minlength="2">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 info-pessoais">
+                    <label for="login">Pastor</label>
+                    <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                        <input data-client-address-pastor name="client[address][pastor]" tabindex="14" type="text" minlength="2">
+                    </div>
+                </div>
+            </div>
+            <!-- Cart Products -->
+            <div class="marginTitulo" id="itensselecionados" data-products>
+                <h3>Projeto Maná</h3>
+                <ul>
+                    <li class="row navItem">
+                        <span class="col-xs-8">Item</span>
+                        <span class="col-xs-2">Qtde</span>
+                        <span class="col-xs-1">
+                            <span class="subtotalTable">Subtotal</span>
+                        </span>
+                        <span class="col-xs-1 navItemExcliur">Excluir</span>
+                    </li>
+                    <li id="listOfProducts"></li>
+                    <li class="footerItem imagemProdutoTotal">
+                        <div class="col-xs-5 col-sm-6 totalValor">
+                            <h2>Total</h2>
+                        </div>
+                        <div class="col-xs-7 col-sm-4">
+                            <div>
+                                <div>
+                                    <h4>R$ </h4>
+                                    <span class="confirmarTotal confirmarTotal--total" data-products-total-value>R$
+                                        0,00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Payment -->
+            <div class="marginTitulo" id="paymentForm">
+                <h3>Forma de Pagamento</h3>
+                <div class="row" id="paymentFormLine">
+                    <div class="col-xs-12 col-sm-6 col-md-6 p-r-20">
+                        <div class="">
+                            <input data-payment-form type="radio" name="payment[form]" class="regular-radio" value="1"
+                                tabindex="17" required="required">
+                            <label class="labelFormaPagto">
+                                <span class="carteira"></span>
+                                <h2>Cartão de Crédito</h2>
+                            </label>
+                        </div>
+                        <div class="col-xs-12">
+                            <label for="login">Número</label>
+                            <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                                <input placeholder="Ex.: 0000 0000 0000 0000" data-payment-card-number
+                                    name="payment[card][number]" tabindex="18" type="tel" minlength="14">
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <label for="login">Bandeira</label>
+                            <div class="lineInput lineInput--dark lineInput--select">
+                                <select data-payment-company name="payment[card][company]" class="selectpicker"
+                                    tabindex="19"></select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <label for="login">Titular</label>
+                            <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                                <input data-payment-card-holder name="payment[card][holder]" tabindex="20" type="text">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 vencimentoCard">
+                            <label for="login">Vencimento</label>
+                            <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                                <input placeholder="Ex.: 00/0000" data-payment-card-expiry name="payment[card][expiry]"
+                                    class="vencimento-cartao" tabindex="21" type="tel" minlength="7">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <label for="login">Código de segurança
+                                <span class="tooltipCod" data-toggle="tooltip" data-placement="top"
+                                    title="Código no verso do cartão.">?</span>
+                            </label>
+                            <div class="lineInput lineInput--dark lineInput--semPlaceholder">
+                                <input placeholder="Ex.: 000" data-payment-card-cvc name="payment[card][cvc]"
+                                    tabindex="22" type="tel">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 m-t-10">
+                            <label for="login">Parcelamento em</label>
+                            <div class="lineInput lineInput--dark lineInput--select">
+                                <select data-payment-company-installments name="payment[card][installments]"
+                                    class="selectpicker" tabindex="23"></select>
+                            </div>
+                            <p class="parcelaAviso">** Valor mínimo p/ parcelamento: R$50,00</p>
+                        </div>
+                    </div>
+                    <div class="linhaPagamento"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 infosBoleto  p-l-20">
+                        <div>
+                            <input data-payment-form type="radio" name="payment[form]" class="regular-radio" value="3"
+                                required="required">
+                            <label class="labelFormaPagto">
+                                <span class="boleto"></span>
+                                <h2>Boleto</h2>
+                            </label>
+                        </div>
+                        <div>
+                            <h1>
+                                <i class="fa fa-barcode"></i>
+                            </h1>
+                            <p>
+                                <strong>Gere o boleto para impressão</strong> através da plataforma do Itaú;</p>
+                        </div>
+                        <div>
+                            <h1>
+                                <i class="fa fa-print"></i>
+                            </h1>
+                            <p>Imprima o boleto e
+                                <strong>pague no banco ou pela internet</strong> utilizando o código de barras do
+                                boleto;</p>
+                        </div>
+                        <div>
+                            <h1>
+                                <i class="fa fa-calendar"></i>
+                            </h1>
+                            <p>O Prazo de Válidade do Boleto é de
+                                <strong>30 dias.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botão para Criar Pedido -->
+                <div class="btn btn--verde" data-action="order/create">
+                    <p>Confirmar Pagamento</p>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Return -->
+    <div data-result-message class="container mensagemCompra" style="display: none">
+        <h2>
+            <i class="fa fa-check"></i>
+            <span data-result-message-title>Concluído, estamos aguardando processamento</span>
+        </h2>
+        <div id="mensageCompra_sucesso" style="display: none;">
+            <p id="mensageCompra_sucesso_numeroPedido"></p>
+            <p data-result-message-info>Você receberá em seu e-mail a confirmação e o comprovante de pagamento.</p>
+            <a class="btn btn--roxo" target="_blank" data-result-message-action></a>
+        </div>
+        <div id="mensagemCompra_erro" style="display: none;">
+            <p id="mensagemCompra_erro_texto"></p>
+        </div>
+        <div id="mensagemCompra_maisInformacoes">
+            Qualquer dúvida entre em contato conosco pelo e-mail
+            <a href="mailto:sac@cpb.com.br">sac@cpb.com.br</a> ou pelo telefone
+            <b>
+                <a href="tel:08009790606">0800 979 0606</a>
+            </b>.
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://use.fontawesome.com/102df62948.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://checkout-cestabasica.cpb.com.br/bower_components/jquery-mask-plugin/dist/jquery.mask.min.js">
+    </script>
+    <script
+        src="https://checkout-cestabasica.cpb.com.br/bower_components/jquery-validation/dist/jquery.validate.min.js">
+    </script>
+    <script src="https://checkout-cestabasica.cpb.com.br/bower_components/jquery.payment/lib/jquery.payment.min.js">
+    </script>
+    
+    <script src="https://checkout.cpb.com.br/js/web/ajax/checkout.js?v202108230745"></script>
+    <!-- <script src="./js/my-checkout.js"></script> -->
+    
+    <!-- <script src="./js/server-checkout.js"></script> -->
+    <script src="./js/jquery.bxslider.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/mana.js?v202008161658"></script>
+    <script src="./js/index.js?v202007171036"></script>
+    <!-- <script src="./bower_components/webcomponentsjs/webcomponents-lite.js"></script> -->
+
+    <script>
+        var cart = CPBCheckout.Cart.getProducts();
+        console.log(cart);
+
+        for (i = 0; i < cart.length; i++) {
+            CPBCheckout.Cart.creatingElementForProduct(cart[i].id, cart[i].quantity);
+        }
+    </script>
+
+    <script>
+        $('.cep').blur(function() {
+            var cep = $('.cep');
+            var valueCEP = cep[0].value;
+            $.getJSON("https://viacep.com.br/ws/"+ valueCEP +"/json/?callback=?", function(dados) {
+                console.log(dados);
+                if (!("erro" in dados)) {
+                    //Atualiza os campos com os valores da consulta.
+                    $("#rua").val(dados.logradouro);
+                    $("#bairro").val(dados.bairro);
+                    $("#cidade").val(dados.localidade);
+                    var uf = dados.uf;
+                    var array = $("#uf").children()
+                    for (i = 0; i < array.length; i++) {
+                        if (array[i].value == uf) {
+                            array[i].selected = true;   
+                        }
+                    }
+                } //end if.
+                else {
+                    //CEP pesquisado não foi encontrado.
+                    alert("CEP não encontrado.");
+                }
+            });
+        })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12962071-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-12962071-1');
+    </script>    
+</body>
+
+</html>
