@@ -323,11 +323,37 @@ div.radioBottom{
 }
 input[type="radio"]:checked,
 input[type="radio"]:hover{
-    background: url(../img/input-radio.svg) -101px center no-repeat;
+    background: url(../img/input-radio.svg) -103px center no-repeat;
     background-size: 130px;
     color: #422680;
     top: 0px;
     position: relative;
+}
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+    position: relative;
+}
+.spanEnvio {
+	display: block;
+    margin: -23px 0 0 15px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+	color: #1d1d1b;
+}
+.spanEnvio b {
+	display: inline-block;
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+.spanEnvio small {
+	font-weight: 600;
+    margin-top: 5px;
+    display: inline-block;
+    font-size: 14px;
+    color: #8b8888;
 }
 input[type="radio"]:checked
 input[type="radio"] + label{
