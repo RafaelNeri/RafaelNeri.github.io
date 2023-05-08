@@ -1,7 +1,0 @@
-{
-  "name": "Projeto Mana",
-  "short_name": "ProjetoMana",
-  "start_url": "/",
-  "display": "standalone",
-  "gcm_sender_id": "482941778795"
-}
