@@ -1,0 +1,15 @@
+{
+  "name": "projeto-mana",
+  "homepage": "https://github.com/Casa-Publicadora-Brasileira/projeto-mana",
+  "authors": [
+    "Guilherme M Pacheco <guilherup@gmail.com>",
+    "James M Martins <james.mendes@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cpb-bar": "Casa-Publicadora-Brasileira/cpb-bar"
+  }
+}

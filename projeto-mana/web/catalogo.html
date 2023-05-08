@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Projeto Maná</title>
+    <!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="description" content="Projeto Maná">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Smartappbanner nativo iOS -->
+    <meta name="apple-itunes-app" content="app-id=1462674720">
+    <!-- Smartappbanner plugin Android -->
+    <meta name="google-play-app" content="app-id=br.com.cpb.ecommerce">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="smart-app-banner-master/dist/smart-app-banner.css" type="text/css" media="screen">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="android-touch-icon" href="android-icon.png" />
+    <!-- End Smartappbanner plugin Android -->
+
+    <script src="./bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!-- Link -->
+    <link rel="preload manifest" href="./manifest.json">
+    <link href="/favicon.ico" type="image/x-icon" rel="preload icon" />
+    <link rel="preload stylesheet" href="css/bootstrap.min.css">
+    <link rel="preload stylesheet" href="owl-carousel/assets/owl.carousel.min.css">
+    <link rel="preload stylesheet" href="owl-carousel/assets/owl.theme.default.min.css">
+    <link href="/css/style-geral.css?201906151045" rel="stylesheet">
+    <link href="/css/style.css?201906151045" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/style-geral.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="preload stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="preload stylesheet">
+    <link rel="import" href="./bower_components/cpb-bar/cpb-bar.html">
+    <link rel="stylesheet" href="blueimp/css/blueimp-gallery.min.css" />
+
+</head>
+
+<body>
+    <cpb-bar hide-search hide-account></cpb-bar>
+    <!-- The Gallery as lightbox dialog, should be a document body child element -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <ol class="indicator"></ol>
+    </div>
+    
+    <span id="topo"></span>
+    <header class="menuHeader" id="inicio">
+        <div class="container">
+            <nav class="row logoEfeito">
+                <div class="col-xs-12 col-sm-3 logonav">
+                    <ul>
+                        <li class="navicon">
+                            <i class="fa fa-bars"></i>
+                        </li>
+                        <li>
+                            <a href="#topo" class="topoPage">
+                                <img class="logoMenu" alt="Logotipo Projeto Maná" src="img/logo-mana.svg">
+                            </a>
+                        </li>
+                        <li class="carrinhoNumero">
+                            <a href="checkout.html" id="headerFinalizarCompra" class="carrinhoComItens btn btn--verde">Finalizar Compra</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="col-xs-12 col-sm-9 itensMenu">
+                    <li class="fecharMenu">
+                        <i class="fa fa-close"></i>
+                        <p>Fechar</p>
+                    </li>
+                    <li>
+                        <a href="#licoes" class="itemMenuSingle kidsMenu">Assinaturas</a>
+                    </li>
+                    <li>
+                        <a href="#sobre" class="itemMenuSingle kidsMenu">O Projeto</a>
+                    </li>
+                    <li>
+                        <a href="#calendario" class="itemMenuSingle kidsMenu">Calendário</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#trintaoff" class="itemMenuSingle kidsMenu">Downloads</a>
+                    </li> -->
+                    <li class="carrinhoNumero">
+                        <a href="#carrinho">
+                            <div class="btn btn-branco carrinhoComItens">
+                                <i class="fa fa-shopping-cart"></i>&nbsp;
+                                <span id="numeroCarrinho" class="numeroCarrinho"></span>&nbsp;
+                                <span id="palavraItens" class="palavraItens"></span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="carrinhoNumero">
+                        <a href="checkout.html" id="headerFinalizarCompra" class="carrinhoComItens btn btn--verde">Finalizar Compra</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="mainbanner">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel owl-theme">
+            <div class="ilustracaofundo img1"></div>
+        </div>
+    </section>
+    
+    <section class="container" id="licoes" data-products data-products-list="Vitrine Mês das Crianças">
+        <h1 class="kids">MINHA PORÇÃO DO MANÁ PARA 2023</h1>
+        <p>Cada dia, cada um, cada manhã. Alimento para a vida.</p>
+        <div class="row">
+            <ul class="produtos">
+                <!-- ABAIXO O ID QUE DEVE SER CHAMADO NAS VARIÁVEIS JS NO FINAL DO CÓDIGO PARA A FUNÇÃO -->
+                <div class="row" id="licoes2023">
+                </div>
+            </ul>
+        </div>
+    </section>
+    
+    <li id="carrinho" class="col-xs-12 col-sm-6 col-md-6 col-lg-4 item" id="resumo-catalogo">
+        <!-- <h3 id="carrinho">Carrinho</h3> -->
+        <div class="imagemProdutoTotal">
+            <div>
+                <h3>Total -
+                    <span>R$</span>
+                </h3>
+                <h2 data-products-total-value>0</h2>
+            </div>
+            <p> </p>
+            <a href="checkout.html" id="finalizarCompra" class="btn btn--verde">Finalizar Compra</a>
+        </div>
+    </li>
+
+    <section class="container-fluid" id="sobre">
+        <article class="sobreMana">
+            <h1>Sobre o Projeto Maná</h1>
+            <p>
+                O Projeto Maná é um esforço unido da igreja para alcançar o maior número de pessoas de todas as idades com a Lição da Escola
+                Sabatina e motivá-las a estudar a cada dia.
+                <br> A prática do estudo diário cria hábitos espirituais que dificilmente se apagam da mente. Fortalecem o crescimento
+                espiritual, nossas convicções na palavra de Deus, nos impulsa a partilhar a cada dia o aprendido, unindo
+                e fortalecendo a família.
+                <strong>Conheça mais sobre o projeto no vídeo abaixo.</strong>
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/60FJfegmT-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+    </section>
+
+    <section class="container-fluid" id="calendario">
+        <div class="caledarioEstados">
+            <h1>Calendário</h1>
+            <p>Confira onde será o próximo mutirão de assinaturas, participe e incentive sua igreja. Aqui no site, você poderá
+                realizar sua assinatura independente da data agendada para o seu estado.</p>
+            <ul class="calendarioDestaque">
+                <li>
+                    <h2>ULB e UNeB | 7 de agosto</h2>
+                </li>
+                <li>
+                    <div class="middleH2">
+                        <h2>Alagoas, Bahia, Ceará, Paraíba, Pernambuco, Piauí, Rio Grande do Norte, Sergipe</h2>
+                    </div>
+                </li>
+            </ul>
+            <ul class="calendarioDestaque">
+                <li>
+                    <h2>UCoB e USeB | 21 de agosto</h2>
+                </li>
+                <li>
+                    <div class="middleH2">
+                        <h2>Distrito Federal, Espírito Santo, Goiás, Mato Grosso, Mato Grosso do Sul, Minas Gerais, Rio de Janeiro, Tocantins</h2>
+                    </div>
+                </li>
+            </ul>
+            <ul class="calendarioDestaque">
+                <li>
+                    <h2>UNoB | 28 de agosto</h2>
+                </li>
+                <li>
+                    <div class="middleH2">
+                        <h2>Acre, Amazonas, Rondônia, Roraima</h2>
+                    </div>
+                </li>
+            </ul>
+            <ul class="calendarioDestaque">
+                <li>
+                    <h2>UNB | 4 de setembro</h2>
+                </li>
+                <li>
+                    <div class="middleH2">
+                        <h2>Amapá, Maranhão, Pará</h2>
+                    </div>
+                </li>
+            </ul>
+            <ul class="calendarioDestaque">
+                <li>
+                    <h2>USB | 11 de setembro</h2>
+                </li>
+                <li>
+                    <div class="middleH2">
+                        <h2>Paraná, Rio Grande do Sul, Santa Catarina</h2>
+                    </div>
+                </li>
+            </ul>
+            <ul class="calendarioDestaque">
+                <li>
+                    <h2>UCB | 9 de outubro</h2>
+                </li>
+                <li>
+                    <div class="middleH2">
+                        <h2>São Paulo</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="newsletter">
+        <section class="container">
+            <p class="warning kids">Antes de ir embora, cadastre seu email!
+                <br>
+                <span class="warning-mini">Fique por dentro das novidades e receba nossas ofertas exclusivas.
+                </p>
+                <form action="https://cl.s11.exct.net/DEManager.aspx" name="subscribeForm" method="post" target="_self">
+                    <input type="hidden" name="_clientID" value="514001760" />
+                    <input type="hidden" name="_deExternalKey" value="B564DFB3-A340-4AC6-B708-600C58EB9BD9" />
+                    <input type="hidden" name="_action" value="add/update" />
+                    <input type="hidden" name="_returnXML" value="0" />            
+                    <input type="hidden" name="_successURL" value="https://projetomana.cpb.com.br/catalogo.html" />
+                    <input type="hidden" name="_errorURL" value="http://cloud.mkt.cpb.com.br/queroreceber" />
+                    <div class="SalesForce">
+                        <input type="text" name="Nome" placeholder="Nome" required><br />
+                    </div>
+                    <div class="SalesForce">
+                        <input type="text" name="Sobrenome" placeholder="Sobrenome" required><br />
+                    </div>
+                    <div class="SalesForce">
+                        <input type="text" name="Email" placeholder="Email" required><br />
+                    </div>
+                    <div class="SalesForce">
+                        <input type="text" name="Celular" placeholder="Celular com o DDD" required><br />
+                    </div>
+                    <div class="SalesForce">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </section>
+        </section>
+        
+        <footer id="contato">
+            <div class="container">
+                <div class="row contatoCpb">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <img alt="Logo Projeto Maná" src="img/logo-cpb.svg">
+                    </div>
+                    <div class="col-xs-12">
+                        <h2>
+                            <a href="tel:08009790606">0800 979 0606</a> |
+                            <a href="https://www.cpb.com.br/" target="_blank">www.cpb.com.br</a> |
+                            <a href="https://www.cpb.com.br/livrarias" target="_blank">CPB livraria</a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-xs-12 redesSociaisIndex">
+                    <ul class="redesSociais">
+                        <li>
+                            <a class="iconLinkSocial iconLinkSocial--left" href="https://www.facebook.com/cpbeditora/" target="_blank">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a class="iconLinkSocial iconLinkSocial--right" href="https://www.instagram.com/cpbeditora/" target="_blank">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a class="iconLinkSocial iconLinkSocial--right" href="https://twitter.com/cpbeditora/" target="_blank">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a class="iconLinkSocial iconLinkSocial--right" href="https://api.whatsapp.com/send?phone=5515981005073&text=Ol%C3%A1" target="_blank">
+                                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row institucionalCpb">
+                    <div class="col-xs-12">
+                        <h2>
+                            <a href="https://www.cpb.com.br/institucional/sobre">Quem Somos</a> |
+                            <a href="https://www.cpb.com.br/meu-cadastro" target="_blank">Cadastre-se</a> |
+                            <a href="http://cpb.uservoice.com/" target="_blank">Dúvidas</a> |
+                            <a href="https://www.cpb.com.br/Login" target="_blank">Minha conta</a>
+                        </h2>
+                        <h2>
+                            <a href="http://cpb.uservoice.com/knowledgebase/topics/105633-atendimento" target="_blank">Atendimento</a> |
+                            <a href="http://cpb.uservoice.com/knowledgebase/topics/105624-trocas-e-devolu%C3%A7%C3%B5es" target="_blank">Trocas e Devoluções</a> |
+                            <a href="http://cpb.uservoice.com/knowledgebase/topics/105618-compras-e-pedidos" target="_blank">Compras e Pedidos</a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row institucional2Cpb">
+                    <div class="col-xs-12">
+                        <h2>Todos os produtos desta página contemplam o benefício do frete grátis na modalidade correspondência normal,
+                            realizada pelos Correios. Caso você tenha interesse em receber os seus materiais com um pouco mais
+                            antecedência, disponibilizamos o envio via SEDEX. No entanto, este serviço está disponível apenas
+                            para compras realizadas no site
+                            <a href="https://www.cpb.com.br/">www.cpb.com.br</a> ou pela Central de Atendimento ao Cliente da Casa Publicadora Brasileira, no telefone
+                            <a href="tel:0800552616"> 0800 55 26 16.</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Scripts -->
+        <script src="https://use.fontawesome.com/102df62948.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="/js/jquery.bxslider.min.js"></script>
+        <script src="/js/jquery.mask.min.js"></script>
+        <script src="/js/jquery.validate.min.js"></script>
+        <script src="https://checkout.cpb.com.br/js/web/ajax/checkout.js?v202108230759"></script>
+        <!-- <script src="../checkout.js"></script> -->
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/mana.js?v202008301619"></script>
+        <script src="./js/mana.js?v202008301619"></script>
+        <script src="/js/index.js?v202007201036"></script>
+        <script src="./js/index.js"></script>
+        <script src="owl-carousel/owl.carousel.min.js"></script>
+        <script src="blueimp/js/blueimp-gallery.min.js"></script>
+        <!-- <script src="/js/jquery.bxslider.min.js"></script> -->
+        <!-- <script src="/js/jquery.mask.min.js"></script> -->
+        <!-- <script src="/js/jquery.validate.min.js"></script> -->
+        <!-- <script src="/js/bootstrap.min.js"></script> -->
+        <!-- <script src="/js/bootstrap.youtubepopup.min.js"></script> -->
+
+        <script src="smart-app-banner-master/dist/smart-app-banner.js"></script>
+
+        <script type="text/javascript">
+            new SmartBanner({
+                daysHidden: 15,   // days to hide banner after close button is clicked (defaults to 15)
+                daysReminder: 90, // days to hide banner after "VIEW" button is clicked (defaults to 90)
+                appStoreLanguage: 'us', // language code for the App Store (defaults to user's browser language)
+                title: 'CPB Loja',
+                author: 'Casa Publicadora Brasileira',
+                button: 'Instalar',
+                icon: '/img/app-android.png',
+                theme: 'ios',
+                store: {
+                    ios: 'Na App Store',
+                    android: 'Na Google Play',
+                    //   windows: 'Na Windows store'
+                },
+                price: {
+                    ios: 'Grátis',
+                    android: 'Grátis',
+                    //   windows: 'Grátis'
+                },
+                // , theme: '' // put platform type ('ios', 'android', etc.) here to force single theme on all device
+                // , icon: '' // full path to icon image if not using website icon image
+                // , force: 'ios' // Uncomment for platform emulation
+            });
+        </script>
+
+        <!--OneSignal-->
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                    appId: "19ffbd7a-1ea2-4078-ad83-a94f2e8968fd",
+                    notifyButton: {
+                        enable: true,
+                    },
+                });
+            });
+        </script>
+        <!-- End OneSignal -->        
+        
+        <!-- 
+            Mudanças para inserir produtos via requisição XMLHttpRequest
+            By: Matheus Ribeiro
+        -->
+        
+        <script>    
+            // Neri - Criar variável
+            // Div 1 - Ativo e funcionando
+            var licoes = 'licoes2023';
+            var categoria = 74;
+            var subcategoria = 281;
+            
+            function getListOfProducts(id, paramsCat, paramsSubcat, insertCheckout) {
+                var xhr = new XMLHttpRequest();
+                var params1 = {
+                    "id_categoria": paramsCat,
+                    "id_subcategoria": paramsSubcat,
+                    "slug" : ''
+                }
+                
+                xhr.open("POST", "https://ecommerce-api-beta.cpb.com.br/v1/product/productsClassification.json");
+                xhr.onload = function () {
+                    console.log('Loaded');
+                    var parse = JSON.parse(xhr.response);
+                    var products = parse.results;
+                    console.log(products);
+                    
+                    var div = document.getElementById(id);
+                    
+                    for (i = 0; i < products.length; i++) {
+                        // Criando o elemento principal
+                        var li = document.createElement('li');
+                        $(li).attr('data-product','');
+                        li.setAttribute('data-product-id', products[i].id);
+                        li.setAttribute('data-product-name', products[i].title);
+                        li.setAttribute('data-product-category', 'Produto');
+                        if (products[i].promocional_price > 0) {
+                            li.setAttribute('data-product-value', products[i].promocional_price.toFixed(2));
+                        } else {
+                            li.setAttribute('data-product-value', products[i].price.toFixed(2));
+                        }
+                        li.classList.add('col-xs-12');
+                        li.classList.add('col-sm-6');
+                        li.classList.add('col-md-6');
+                        li.classList.add('col-lg-4');
+                        li.classList.add('item');
+                        div.appendChild(li);
+                        
+                        // Criando a div para imagem do produto
+                        var imagemProduto = document.createElement('div');
+                        imagemProduto.classList.add('imagemProduto');
+                        li.appendChild(imagemProduto);
+                        
+                        // Criando o link para a imagem do produto
+                        var linkImagemProduto = document.createElement('a');
+                        linkImagemProduto.setAttribute('href', 'https://storage.googleapis.com/imagens.cpb.com.br/produtos/' + products[i].id + '/' + products[i].id + '-01-web-product-page.png');
+                        linkImagemProduto.setAttribute('title', products[i].title);
+                        linkImagemProduto.setAttribute('data-gallery', '#produto');
+                        imagemProduto.appendChild(linkImagemProduto);
+                        
+                        // Criando o elemento img para exibir a imagem do produto
+                        var imgImagemProduto = document.createElement('img');
+                        imgImagemProduto.setAttribute('alt', products[i].title);
+                        imgImagemProduto.setAttribute('data-gallery', '#produto');
+                        imgImagemProduto.setAttribute('src', 'https://storage.googleapis.com/imagens.cpb.com.br/produtos/' + products[i].id + '/' + products[i].id + '-01-web-product-page.png');
+                        imagemProduto.appendChild(imgImagemProduto);
+                        
+                        // Criando o elemento para informações do produto
+                        var produtoInfo = document.createElement('div');
+                        produtoInfo.setAttribute('class', 'produtoinfo');
+                        li.appendChild(produtoInfo);
+                        
+                        // Criando elemento para título do produto
+                        var produtoTitle = document.createElement('h3');
+                        produtoTitle.innerHTML = products[i].title;
+                        produtoInfo.appendChild(produtoTitle);
+                        
+                        // Criando elemento para descrição do produto
+                        // var produtoDescricao = document.createElement('p');
+                        // produtoDescricao.innerHTML = products[i].subtitle;
+                        // produtoInfo.appendChild(produtoDescricao);
+                        
+                        // Criando elemento para código do produto
+                        var produtoCodigo = document.createElement('p');
+                        produtoCodigo.innerHTML = 'cód. ' + products[i].id;
+                        produtoInfo.appendChild(produtoCodigo);
+                        
+                        // Criando div para informações monetárias do produto
+                        var produtoCompra = document.createElement('div');
+                        produtoInfo.appendChild(produtoCompra);
+
+                        if (products[i].promocional_price > 0) {
+                            // Criando elemento para o valor original do produto
+                            var produtoValorOriginal = document.createElement('p');
+                            var price = products[i].price.toFixed(2).replace('.', ',');
+                            produtoValorOriginal.innerHTML = 'de ' + price + ' por:';
+                            produtoCompra.appendChild(produtoValorOriginal);
+
+                            // Criando elemento para preço promocional do produto
+                            var produtoPrecoPromocional = document.createElement('h2');
+                            var promocionalPrice = products[i].promocional_price.toFixed(2).replace('.', ',');
+                            produtoPrecoPromocional.innerHTML = 'R$ ' + promocionalPrice;
+                            produtoCompra.appendChild(produtoPrecoPromocional);    
+                        } else {
+                            // Criando elemento para o valor original do produto SEM PREÇO PROMOCIONAL
+                            var produtoPrecoPromocional = document.createElement('h2');
+                            var price = products[i].price.toFixed(2).replace('.', ',');
+                            produtoPrecoPromocional.innerHTML = 'R$ ' + price;
+                            produtoCompra.appendChild(produtoPrecoPromocional);
+                        }
+                        // Criando elemento para quantidade do produto
+                        var divQtde = document.createElement('div');
+                        produtoCompra.appendChild(divQtde);
+                        var labelQtde = document.createElement('label');
+                        labelQtde.innerHTML = 'Quantidade';
+                        divQtde.appendChild(labelQtde);
+                        var inputQtde = document.createElement('input');
+                        inputQtde.setAttribute('type', 'number');
+                        $(inputQtde).attr('data-product-quantity', '');
+                        inputQtde.setAttribute('data-product-id', products[i].id);
+                        if (products[i].promocional_price > 0) {
+                            inputQtde.setAttribute('data-product-value', products[i].promocional_price.toFixed(2));
+                        } else {
+                            inputQtde.setAttribute('data-product-value', products[i].price.toFixed(2));
+                        }
+
+                        inputQtde.setAttribute('min', 0);
+                        inputQtde.setAttribute('name', 'quantidade');
+                        inputQtde.setAttribute('placeholder', 0);
+                        divQtde.appendChild(inputQtde);
+                        
+                        // Criando elemento para Subtotal do produto
+                        var produtoTotal = document.createElement('div');
+                        produtoCompra.appendChild(produtoTotal);
+                        var subtotalText = document.createElement('label');
+                        subtotalText.innerHTML = 'Sub-total';
+                        produtoTotal.appendChild(subtotalText);
+                        var valorSubtotal = document.createElement('p');
+                        valorSubtotal.setAttribute('class', 'subtotal');
+                        $(valorSubtotal).attr('data-product-subtotal-value', '');
+                        valorSubtotal.setAttribute('data-product-id', products[i].id);
+                        valorSubtotal.innerHTML = 'R$ 0,00';
+                        produtoTotal.appendChild(valorSubtotal);
+                    }
+                    if (insertCheckout == true) {
+                        console.log('é true');
+                        var carrinho = document.getElementById('carrinho');
+                        var div = document.getElementById(id);
+                        div.appendChild(carrinho);
+                    } else {
+                        console.log('é falso')
+                    }
+                    window.console.log('Mana - Index - $Ready');
+                    // CPBCheckout Initiation
+                    CPBCheckout.init();
+                    CPBCheckout.config.api.urlBase = 'https://checkout.cpb.com.br/api';
+                    CPBCheckout.components.visualUpdateQuantityItensCallback = Mana.checkout.updateQuantityItens;
+                    CPBCheckout.components.visualUpdateItemValueColorCallback = Mana.checkout.updateItemValueColor;
+                    CPBCheckout.Google.getProductDetailCallback = Mana.checkout.getProductDetailCallback;
+                    CPBCheckout.Google.getProductListCallback = Mana.checkout.getProductListCallback;
+                    CPBCheckout.Google.checkout(1);
+                    CPBCheckout.run();
+                    // Mana Initiation
+                    Mana.init();
+                    Mana.menuTopoItensLink();
+                    Mana.menuReponsivo();
+                    Mana.menuTopo();
+                    Mana.slide($(window).width());
+                    Mana.youtubeModal();
+                    Mana.materialDivulgacao();
+                    Mana.carregarImg();
+                };
+                xhr.send(JSON.stringify(params1));
+            }
+            
+            // Neri - Criar função (idHTML, categoria)
+            getListOfProducts(licoes, categoria, subcategoria, true); // Funcionando ativamente
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12962071-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-12962071-1');
+        </script>
+
+    </body>
+    
+    </html>
